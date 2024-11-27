@@ -1,0 +1,79 @@
+/* Conteneur principal */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Titre principal */
+.container h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Chemin de navigation */
+.breadcrumb {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.breadcrumb a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Conteneur pour l'image et la description */
+.element-wrapper {
+    display: flex; /* Aligne horizontalement l'image et le texte */
+    gap: 20px; /* Ajoute un espace entre l'image et le texte */
+    align-items: flex-start; /* Aligne le contenu verticalement */
+    margin-bottom: 20px; /* Espacement entre les éléments */
+}
+
+/* Image */
+.element-image {
+    flex-shrink: 0; /* Empêche l'image de rétrécir */
+    width: 200px;
+    height: auto;
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Section texte */
+.element-description {
+    flex-grow: 1; /* Permet au texte de prendre tout l'espace restant */
+    text-align: left;
+}
+
+/* Titre dans la description */
+.element-description h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Genre ou autre info */
+.element-description .genre {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Texte de la description */
+.element-description p {
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #555;
+    text-align: justify; /* Justifie le texte */
+}

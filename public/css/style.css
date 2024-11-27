@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 /* Conteneur principal */
 .search-container {
     display: flex;
@@ -8,30 +13,17 @@
     width: 100%;
     max-width: 600px;
     margin: 20px auto;
-    margin-top: 47vh;
+
     text-align: center;
-}
-
-/* Logo */
-.logo {
-    width: 100px; /* Ajustez selon vos besoins */
-    height: auto;
-    margin-bottom: 20px;
-    border-radius: 6vh;
-}
-
-/* Titre */
-.search-title {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
 }
 
 /* Barre de recherche */
 .form-control {
-    width: 100%;
-    max-width: 500px;
     padding: 10px;
     font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Résultats de recherche */
@@ -47,32 +39,58 @@
     max-height: 300px;
     overflow-y: auto;
     margin-top: 10px;
+    border-radius: 4px;
 }
 
 /* Élément individuel d'un résultat */
-.search-result {
-    display: flex;
+/* Conteneur principal pour les résultats */
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+/* Élément individuel du résultat */
+.result-item {
+    display: flex; /* Utilise Flexbox pour aligner l'image et le texte */
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #ddd;
     cursor: pointer;
-    background-color: black;
+    transition: background-color 0.3s ease;
 }
 
+.result-item:hover {
+    background-color: #f0f0f0; /* Couleur de fond au survol */
+}
 
-/* Informations d'un résultat */
+/* Image dans les résultats */
+.result-image {
+    width: 92px;
+    height: 138px;
+    object-fit: cover;
+    margin-right: 15px; /* Ajoute un espace entre l'image et le texte */
+    border-radius: 4px; /* Coins arrondis pour un design moderne */
+}
+
+/* Texte aligné à droite de l'image */
 .result-info {
-    flex-grow: 1;
+    flex-grow: 1; /* Le texte prend tout l'espace disponible */
+    text-align: left; /* Alignement du texte à gauche */
 }
 
-.result-info h5 {
+.title_name {
     margin: 0;
     font-size: 16px;
     font-weight: bold;
-}
-
-.result-info p {
-    margin: 5px 0 0;
-    font-size: 14px;
-    color: #555;
+    color: #333;
 }
