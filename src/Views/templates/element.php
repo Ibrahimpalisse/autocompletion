@@ -16,7 +16,7 @@
                         <!-- Description à droite -->
                         <div class="element-description">
                             <h2><?= htmlspecialchars($element['name']) ?></h2>
-                            <span class="genre"><?= htmlspecialchars($element['genre']) ?></span>
+                            <span class="genr"><?= htmlspecialchars($element['genr']) ?></span>
                             <p><?= nl2br(htmlspecialchars($element['description'])) ?></p>
                         </div>
                     </div>

@@ -2,7 +2,7 @@
 <header>
         <section class="search-container">
             <h1 class="search-title">
-                Trouver un personnage ou un novel de webnovel
+                Chercher n'importe quel animale
             </h1>
             <input
                 type="text"

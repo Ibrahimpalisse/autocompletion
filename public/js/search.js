@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         // Structure du HTML interne
                         resultItem.innerHTML = `
-                        <div class="result-item">
+                            <div class="result-item">
                                 <img src="./public/img/${item.image_url}" alt="${item.name}" class="result-image">
                                 <div class="result-info">
                                     <h5 class="title_name">${item.name}</h5>
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         // Ajoute un événement de clic pour rediriger vers les détails
                         resultItem.addEventListener('click', () => {
-                            window.location.href = `element?id=${item.id_character}`;
+                            window.location.href = `element?id=${item.id_animal}`;
                         });
 
                         // Ajoute l'élément au conteneur des résultats

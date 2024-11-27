@@ -12,7 +12,7 @@ class Element {
      * Récupère tous les éléments de la table novel_character en fonction de l'id
      */
     public function getElements(int $id): array {
-        $query = $this->pdo->prepare("SELECT * FROM novel_character WHERE id_character = :id");
+        $query = $this->pdo->prepare("SELECT * FROM animals WHERE id_animal = :id");
         $query->execute(['id' => $id]);
         return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
