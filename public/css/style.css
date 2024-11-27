@@ -1,0 +1,78 @@
+/* Conteneur principal */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    margin-top: 47vh;
+    text-align: center;
+}
+
+/* Logo */
+.logo {
+    width: 100px; /* Ajustez selon vos besoins */
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 6vh;
+}
+
+/* Titre */
+.search-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Barre de recherche */
+.form-control {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Résultats de recherche */
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+/* Élément individuel d'un résultat */
+.search-result {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    background-color: black;
+}
+
+
+/* Informations d'un résultat */
+.result-info {
+    flex-grow: 1;
+}
+
+.result-info h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.result-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #555;
+}
