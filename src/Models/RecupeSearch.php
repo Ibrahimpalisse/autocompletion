@@ -8,7 +8,7 @@ class RecupeSearch {
         $this->pdo = $pdo;
     }
 
-    public function searchByFirstLetter(string $letter): array {
+    public function searchByLetter(string $letter): array {
         if (empty($letter) || strlen($letter) > 1) {
             throw new \InvalidArgumentException('Le paramètre "letter" doit être une chaîne de 1 caractère.');
         }
@@ -20,7 +20,7 @@ class RecupeSearch {
                  WHERE name LIKE :letter 
                  LIMIT 10"
             );
-            $query->execute(['letter' => $letter . '%']);
+            $query->execute(['letter' => '%' . $letter . '%']);
             return $query->fetchAll(\PDO::FETCH_ASSOC);
         } catch (\PDOException $e) {
             // Gestion des erreurs PDO

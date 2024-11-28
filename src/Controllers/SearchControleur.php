@@ -21,7 +21,7 @@ class SearchControleur {
         // Vérifie si la requête POST contient 'letter'
         if (!empty($_GET['query'])) {
             $letter = htmlspecialchars($_GET['query']); // Sécurise l'entrée utilisateur
-            $result = $this->recupeSearch->searchByFirstLetter($letter); // Recherche
+            $result = $this->recupeSearch->searchByLetter($letter); // Recherche
             echo json_encode($result);
             return; // Stoppe l'exécution pour ne pas rendre la vue
         }

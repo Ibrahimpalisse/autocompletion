@@ -1,20 +1,24 @@
 <?php
+
 namespace App\Controllers;
 
 use App\Models\Element;
 use App\Views\View;
 
-class ElementController {
+class ElementController
+{
     private $elementModel;
 
-    public function __construct($pdo) {
+    public function __construct($pdo)
+    {
         $this->elementModel = new Element($pdo);
     }
 
     /**
      * Affiche les éléments récupérés après vérification de l'ID
      */
-    public function afficher($id) {
+    public function afficher($id)
+    {
         // Vérification si l'ID est valide (entier positif)
         if (!is_numeric($id) || intval($id) <= 0) {
             http_response_code(400); // Code d'erreur HTTP 400 (Bad Request)
@@ -40,9 +44,3 @@ class ElementController {
         ]);
     }
 }
-
-
-
-
-
-
