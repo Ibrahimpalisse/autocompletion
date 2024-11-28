@@ -9,7 +9,7 @@ class RecupeSearch {
     }
 
     public function searchByLetter(string $letter): array {
-        if (empty($letter) || strlen($letter) > 1) {
+        if (empty($letter) || strlen($letter) > 10) {
             throw new \InvalidArgumentException('Le paramètre "letter" doit être une chaîne de 1 caractère.');
         }
 

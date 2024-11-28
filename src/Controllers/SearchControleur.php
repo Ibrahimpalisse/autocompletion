@@ -2,7 +2,6 @@
 namespace App\Controllers;
 
 use App\Models\RecupeSearch;
-use App\Views\View;
 
 class SearchControleur {
     private $recupeSearch;
@@ -17,17 +16,33 @@ class SearchControleur {
      */
     public function resultSearch() {
         header('Content-Type: application/json');
+        header('Access-Control-Allow-Origin: *'); // Permet les requêtes entre domaines, ajustez selon vos besoins
 
-        // Vérifie si la requête POST contient 'letter'
-        if (!empty($_GET['query'])) {
-            $letter = htmlspecialchars($_GET['query']); // Sécurise l'entrée utilisateur
-            $result = $this->recupeSearch->searchByLetter($letter); // Recherche
-            echo json_encode($result);
-            return; // Stoppe l'exécution pour ne pas rendre la vue
+        try {
+            // Vérification de la méthode HTTP
+            if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+                http_response_code(405); // Méthode non autorisée
+                echo json_encode(['error' => 'Méthode non autorisée']);
+                return;
+            }
+
+            // Vérifie si la requête contient 'query'
+            if (isset($_GET['query']) && is_string($_GET['query']) && !empty(trim($_GET['query']))) {
+                $letter = htmlspecialchars($_GET['query'], ENT_QUOTES, 'UTF-8'); // Sécurise l'entrée utilisateur
+                $result = $this->recupeSearch->searchByLetter($letter); // Recherche
+
+                // Retourne les résultats sous forme de JSON
+                echo json_encode($result);
+                return;
+            }
+
+            // Retourne une réponse vide si aucune donnée n'est envoyée
+            http_response_code(400); // Requête incorrecte
+            echo json_encode(['error' => 'Paramètre "query" manquant ou vide']);
+        } catch (\Exception $e) {
+            // Gestion des erreurs inattendues
+            http_response_code(500); // Erreur interne du serveur
+            echo json_encode(['error' => 'Une erreur est survenue : ' . $e->getMessage()]);
         }
-
-        // Retourne une réponse vide si aucune donnée
-        echo json_encode([]);
     }
- 
 }
